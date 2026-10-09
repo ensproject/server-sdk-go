@@ -1,0 +1,213 @@
+{
+  "repo_notes": [
+    {
+      "content": ""
+    }
+  ],
+  "pages": [
+    {
+      "title": "Overview",
+      "purpose": "Introduce the FeatureProbe Go server SDK: purpose, repo layout, local-evaluation architecture, and links to child pages.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Getting Started",
+      "purpose": "Install the module, configure FPConfig (RemoteUrl, ServerSdkKey, RefreshInterval, StartWait), and run the example app.",
+      "parent": "Overview",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Dependencies and Module Layout",
+      "purpose": "go.mod/go.sum dependencies (websocket, socket.io client, semver, testify, httpmock) and module versioning (/v2).",
+      "parent": "Overview",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Client Architecture",
+      "purpose": "Overview of the FeatureProbe client: initialization, evaluation API, telemetry, and realtime updates; links to child pages.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Client Lifecycle and Configuration",
+      "purpose": "NewFeatureProbe, setServerUrls, StartWait/ready channel, Initialized(), Close(), NewFeatureProbeForTest.",
+      "parent": "Client Architecture",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Evaluation API (Value and Detail methods)",
+      "purpose": "BoolValue/StrValue/NumberValue/JsonValue and the *Detail variants, genericDetail flow, defaults and panic recovery.",
+      "parent": "Client Architecture",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "User Context (FPUser)",
+      "purpose": "FPUser attributes, thread safety, StableRollout, Key generation, ToMap.",
+      "parent": "Client Architecture",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Evaluation Engine",
+      "purpose": "Overview of toggle/segment evaluation model in evaluate.go; links to children for rules, conditions, and bucketing.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Repository and Data Model",
+      "purpose": "Repository atomic storage, RepositoryData, Toggle, Segment, Serve, Variation, flush/Clear/getters, DebugUntilTime.",
+      "parent": "Evaluation Engine",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Rules, Conditions, and Predicates",
+      "purpose": "Rule/Condition matching across string, number, datetime, semver and segment types with all predicates.",
+      "parent": "Evaluation Engine",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Rollouts, Splits, and Hash Bucketing",
+      "purpose": "Split/Distribution/Range, bucketBy and salt, saltHash SHA-1 bucketing into 10000 buckets.",
+      "parent": "Evaluation Engine",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Prerequisites and Error Reasons",
+      "purpose": "Prerequisite chains, MaxPrerequisitesDeep recursion limit, disabled serve fallback and EvalDetail Reason strings.",
+      "parent": "Evaluation Engine",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Data Synchronization and Telemetry",
+      "purpose": "How the SDK keeps local state fresh and reports usage; links to sync, events, and realtime pages.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Synchronizer (Polling)",
+      "purpose": "NewSynchronizer / NewCustomRepoSynchronizer, ticker loop, FetchRemoteRepo HTTP GET, sync.Once lifecycle, Stop.",
+      "parent": "Data Synchronization and Telemetry",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Event Recorder",
+      "purpose": "AccessEvent/DebugEvent/CustomEvent, aggregation in Access/ToggleCounter, PackedData flush over HTTP, Start/Stop.",
+      "parent": "Data Synchronization and Telemetry",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Realtime Socket Updates",
+      "purpose": "Socket.io client connection to RealtimeUrl, update notifications triggering immediate repo fetch.",
+      "parent": "Data Synchronization and Telemetry",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Testing and CI",
+      "purpose": "Overview of the test suite, fixtures, contract specification tests and CI workflow.",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Unit Test Suite",
+      "purpose": "Test patterns in featureprobe_test.go, evaluate_test.go, sync_test.go, event_test.go, user_test.go; httpmock and testify usage.",
+      "parent": "Testing and CI",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Fixtures and Contract Specification",
+      "purpose": "resources/fixtures (repo.json, toggles.json, segments.json) and the server-sdk-specification submodule driving TestContract.",
+      "parent": "Testing and CI",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "CI and Coverage",
+      "purpose": "GitHub Actions build-with-coverage workflow, race detection, codecov reporting.",
+      "parent": "Testing and CI",
+      "page_notes": [
+        {
+          "content": ""
+        }
+      ]
+    },
+    {
+      "title": "Glossary",
+      "purpose": "Definitions of SDK and feature-flag domain terms with code pointers (Toggle, Segment, Serve, Split, Salt, Prerequisite, EvalDetail, FPUser, StableRollout, AccessEvent, DebugUntilTime, Synchronizer, PackedData, MaxPrerequisitesDeep, ServerSdkKey, etc.).",
+      "page_notes": [
+        {
+          "content": "test"
+        }
+      ]
+    }
+  ]
+}
